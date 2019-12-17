@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="b22c9270-2f27-4eff-b922-d288b7d1420c" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="challenge1_greetmeFlow" doc:id="50bea72e-77dc-4a6b-a604-d5062885c770" >
+		<http:listener doc:name="Listener" doc:id="34a21201-4c64-4a22-a66a-c59942df965f" config-ref="HTTP_Listener_config" path="/greetMe"/>
+		<set-payload value="Hi, Anteneh." doc:name="Set Payload" doc:id="fa886503-2b8b-4d6b-a78e-8dcf2a614cf1" />
+	</flow>
+</mule>
